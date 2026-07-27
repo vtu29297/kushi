@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffc371);
+    font-family: Georgia, serif;
+}
+
+.container{
+    text-align:center;
+    z-index:10;
+}
+
+input{
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-family: Georgia, serif;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#ff4081;
+    color:white;
+    font-size:18px;
+    font-family: Georgia, serif;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e91e63;
+}
+
+#card{
+    display:none;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    color:black;
+}
+
+#card img{
+    width:350px;
+    border-radius:15px;
+    margin:30px;
+    box-shadow:0 0 20px black;
+}
+
+h1{
+    font-size:20px;
+}
+.message{
+    position:absolute;
+    left:-350px;
+    color:black;
+    font-size:20px;
+    font-family:Georgia, serif;
+    font-weight:bold;
+    white-space:nowrap;
+    animation:fly 15s linear infinite;
+}
+
+/* Different heights */
+.m1{top:5%; animation-delay:7s;}
+.m2{top:15%; animation-delay:2s;}
+.m3{top:25%; animation-delay:8s;}
+.m4{top:35%; animation-delay:4s;}
+.m5{top:45%; animation-delay:9s;}
+.m6{top:55%; animation-delay:0s;}
+.m7{top:65%; animation-delay:3s;}
+.m8{top:75%; animation-delay:5s;}
+.m9{top:85%; animation-delay:1s;}
+.m10{top:95%; animation-delay:6s;}
+
+@keyframes fly{
+    0%{
+        transform:translateX(0);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateX(1800px);
+        opacity:0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="form">
+
+<h2 style="color:white;">Enter Your Name</h2>
+<br>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<br>
+
+<button onclick="showBirthday()">
+Celebrate 🎉
+</button>
+
+</div>
+
+<div id="card">
+
+<h1 id="message"></h1>
+
+<img src="kushi.jpg.jpeg" alt="myphoto">
+
+<h2>🎂 Have a Wonderful Birthday! 🎂</h2>
+
+</div>
+
+</div>
+<div class="message m1">🎉 Happy Birthday! 🎂</div>
+<div class="message m2">🎈 Have a Wonderful Day!</div>
+<div class="message m3">🎁 Stay Blessed!</div>
+<div class="message m4">💖 Keep Smiling!</div>
+<div class="message m5">🌟 Enjoy Your Special Day!</div>
+<div class="message m6">🥳 Many Happy Returns!</div>
+<div class="message m7">🎂 Wishing You Success!</div>
+<div class="message m8">🎉 Have Fun!</div>
+<div class="message m9">❤️ Stay Happy!</div>
+<div class="message m10">🎊 Best Wishes!</div>
+
+
+<script>
+
+function showBirthday(){
+
+let username=document.getElementById("name").value;
+
+if(username==""){
+alert("Please enter your name.");
+return;
+}
+
+document.getElementById("form").style.display="none";
+
+document.getElementById("card").style.display="block";
+
+
+
+document.getElementById("message").innerHTML=
+"🎉 Happy Birthday " + username + " 🎉";
+
+}
+
+</script>
+
+</body>
+</html>
